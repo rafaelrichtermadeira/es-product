@@ -100,7 +100,7 @@ npm run dev
 
 ```bash
 cd plus-infra
-# Configurar .env (ver README do plus-infra)
+# Configurar .env -> ver README do plus-infra
 docker compose up -d --build
 ```
 
