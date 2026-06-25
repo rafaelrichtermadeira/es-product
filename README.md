@@ -1,4 +1,4 @@
-Trabalho 2 de ES2, Grupo 7
+Trabalho 2 de ES2, Grupo 7 
 
 Integrantes: Jasmine Vanzella, Julia Fernandes, Luiza Rosito, Murilo Souza e Rafael Madeira
 
@@ -100,7 +100,7 @@ npm run dev
 
 ```bash
 cd plus-infra
-# Configurar .env (ver README do plus-infra)
+# Configurar .env -> ver README do plus-infra
 docker compose up -d --build
 ```
 

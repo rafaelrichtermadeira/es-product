@@ -1,10 +1,10 @@
 """
-Configuração compartilhada dos testes UNITÁRIOS do MS de Produto.
+Configuração compartilhada dos testes UNITÁRIOS do MS de Produto
 
 Os testes aqui NÃO sobem servidor nem container: usam o TestClient do
 FastAPI (chama o app diretamente em memória) e um banco SQLite em
 memória no lugar do Postgres/Ministack real. Isso é o que permite
-esses testes rodarem direto no pipe, sem precisar de Docker.
+esses testes rodarem direto no pipe, sem precisar de Docker
 """
 import os
 
