@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import LogoutIcon from "@mui/icons-material/Logout";
+import InventoryIcon from "@mui/icons-material/Inventory";
 
 const API = import.meta.env.VITE_MS_AUTH_URL || "http://localhost:3001";
 
@@ -151,34 +152,63 @@ export default function DashboardPage() {
             Plus Gestão
           </Typography>
 
-          {/* NOVO BOTÃO DE SAIR */}
-          <Button
-            startIcon={<LogoutIcon />}
-            onClick={handleLogout}
-            sx={{
-              borderRadius: "16px",
-              px: 2.5,
-              py: 1.2,
-              color: "#fff",
-              background: "rgba(255,255,255,0.12)",
-              border: "1px solid rgba(255,255,255,0.18)",
-              backdropFilter: "blur(10px)",
-              textTransform: "none",
-              fontWeight: 600,
-              fontSize: "0.95rem",
-              boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
-              transition: "all .2s ease",
+          <Box sx={{ display: "flex", gap: 2 }}>
+            <Button
+              startIcon={<InventoryIcon />}
+              onClick={() => {
+                // Se estiver rodando dentro do shell (onde a rota /products existe)
+                // Usamos window.location.href para redirecionar para o módulo de produtos
+                window.location.href = "/products";
+              }}
+              sx={{
+                borderRadius: "16px",
+                px: 2.5,
+                py: 1.2,
+                color: "#fff",
+                background: "linear-gradient(90deg, #6C63FF 0%, #7B74F5 100%)",
+                border: "1px solid rgba(255,255,255,0.18)",
+                backdropFilter: "blur(10px)",
+                textTransform: "none",
+                fontWeight: 600,
+                fontSize: "0.95rem",
+                boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+                transition: "all .2s ease",
+                "&:hover": {
+                  background: "linear-gradient(90deg, #5A52E0 0%, #6C63FF 100%)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 10px 28px rgba(0,0,0,0.18)",
+                },
+              }}
+            >
+              Produtos
+            </Button>
 
-              "&:hover": {
-                background: "rgba(255,255,255,0.2)",
-                transform: "translateY(-2px)",
-                boxShadow:
-                  "0 10px 28px rgba(0,0,0,0.18)",
-              },
-            }}
-          >
-            Sair
-          </Button>
+            <Button
+              startIcon={<LogoutIcon />}
+              onClick={handleLogout}
+              sx={{
+                borderRadius: "16px",
+                px: 2.5,
+                py: 1.2,
+                color: "#fff",
+                background: "rgba(255,255,255,0.12)",
+                border: "1px solid rgba(255,255,255,0.18)",
+                backdropFilter: "blur(10px)",
+                textTransform: "none",
+                fontWeight: 600,
+                fontSize: "0.95rem",
+                boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+                transition: "all .2s ease",
+                "&:hover": {
+                  background: "rgba(255,255,255,0.2)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 10px 28px rgba(0,0,0,0.18)",
+                },
+              }}
+            >
+              Sair
+            </Button>
+          </Box>
         </Box>
 
         {isAdmin ? (

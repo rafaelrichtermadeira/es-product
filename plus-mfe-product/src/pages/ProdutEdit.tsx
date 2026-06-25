@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Typography, Snackbar, Alert } from "@mui/material";
+import { Box, Typography, Snackbar, Alert, Button } from "@mui/material";
 
 import { ProductGrid } from "../components/ProductGrid";
 import { ProductCard } from "../components/ProductCard";
@@ -19,6 +19,28 @@ export function ProductEditAdminPage() {
   const { createProduct, loadProduct, updateProduct, disableProduct } = useProductForm();
   const categories = MOCK_CATEGORIES;
   const suppliers = MOCK_SUPPLIERS;
+
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    return (
+      <Box sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "#f6f5fb", p: 3 }}>
+        <Typography variant="h5" color="error" gutterBottom fontWeight={700}>
+          Acesso Negado
+        </Typography>
+        <Typography variant="body1" color="text.secondary" gutterBottom align="center">
+          Você não está autenticado. Para acessar o catálogo de produtos, por favor, faça o login no sistema.
+        </Typography>
+        <Button 
+          variant="contained" 
+          onClick={() => window.location.href = "http://localhost:3000/login"} 
+          sx={{ mt: 2, background: "linear-gradient(90deg, #6C63FF 0%, #7B74F5 100%)", borderRadius: "16px" }}
+        >
+          Fazer Login no Sistema
+        </Button>
+      </Box>
+    );
+  }
 
   const [createOpen, setCreateOpen] = useState(false);
   const [creating, setCreating] = useState(false);
