@@ -1,4 +1,4 @@
-Trabalho 2 de ES2, Grupo 7
+Trabalho 2 de ES2, Grupo 7 
 
 Integrantes: Jasmine Vanzella, Julia Fernandes, Luiza Rosito, Murilo Souza e Rafael Madeira
 
